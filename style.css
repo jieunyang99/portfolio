@@ -56,10 +56,20 @@ ul {
 
 /* 히어로 섹션 */
 .hero {
-  background: url('images/hero-bg.jpg') center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 120px 20px;
+  background-size: cover;
+  background-position: center;
+  width: 1920px;
+  height: 850px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 히어로 섹션 내부 컨테이너 크기 조정 */
+.hero .container {
+  width: 100%;
+  max-width: 1920px;
 }
 .hero h1 {
   font-size: 2.5rem;
