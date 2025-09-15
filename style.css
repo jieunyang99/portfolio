@@ -151,13 +151,12 @@ ul {
 .hero {
   background-size: cover;
   background-position: center;
-  width: 1750px;
+  width: 1200px;
   height: 850px;
   margin: 0 auto;
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 /* 히어로 섹션 내부 컨테이너 크기 조정 */
 .hero .container {
