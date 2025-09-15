@@ -57,21 +57,51 @@ function crossfadeToNext() {
   const nextIdx = (idx + 1) % images.length;
   const fadeOutLayer = layers[current];
   const fadeInLayer = layers[1 - current];
-  // 다음 이미지를 미리 세팅
-  fadeInLayer.style.backgroundImage = `url('${images[nextIdx]}')`;
-  fadeInLayer.style.transition = 'opacity 0.8s ease-in-out';
-  fadeOutLayer.style.transition = 'opacity 0.8s ease-in-out';
-  // 크로스페이드
-  fadeInLayer.style.opacity = 50;
-  fadeOutLayer.style.opacity = 50;
-  // 인덱스 및 current 갱신
-  setTimeout(() => {
-    idx = nextIdx;
-    current = 1 - current;
-  }, 800);
+  // 다음 이미지를 미리 로드
+  const img = new window.Image();
+  img.src = images[nextIdx];
+  img.onload = function() {
+    fadeInLayer.style.backgroundImage = `url('${images[nextIdx]}')`;
+    fadeInLayer.style.transition = 'opacity 0.8s ease-in-out';
+    fadeOutLayer.style.transition = 'opacity 0.8s ease-in-out';
+    // 크로스페이드
+    fadeInLayer.style.opacity = 1;
+    fadeOutLayer.style.opacity = 0;
+    setTimeout(() => {
+      idx = nextIdx;
+      current = 1 - current;
+    }, 800);
+  };
 }
 
 setInterval(crossfadeToNext, 5000);
+</script>
+
+<script>
+// 네비게이션 '소개' 클릭 시 서비스 섹션으로 스크롤
+document.querySelector('a[href="#process"], a[href="#services"]').addEventListener('click', function(e) {
+  e.preventDefault();
+  const target = document.getElementById('services');
+  if (!target) return;
+  const targetY = target.getBoundingClientRect().top + window.pageYOffset;
+  const startY = window.pageYOffset;
+  const distance = targetY - startY;
+  const duration = 1200; // ms, 기존보다 더 느리게
+  let startTime = null;
+  function scrollStep(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    window.scrollTo(0, startY + distance * easeInOutQuad(progress));
+    if (progress < 1) {
+      window.requestAnimationFrame(scrollStep);
+    }
+  }
+  function easeInOutQuad(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  }
+  window.requestAnimationFrame(scrollStep);
+});
 </script>
 
   <!-- 서비스 / 주요업무 섹션 -->
