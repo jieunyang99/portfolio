@@ -93,4 +93,5 @@ ul {
 }
 .service-item:hover {
   transform: translateY(-5px);
-  box-shad
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
