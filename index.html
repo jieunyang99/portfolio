@@ -46,8 +46,27 @@ function rotateBackground() {
   hero.style.backgroundImage = `url('${images[idx]}')`;
   idx = (idx + 1) % images.length;
 }
-rotateBackground();
-setInterval(rotateBackground, 4000); // 4초마다 변경
+hero.style.transition = 'background-image 0.5s ease-in-out';
+
+function fadeOutIn(callback) {
+  hero.style.opacity = 0;
+  setTimeout(() => {
+    callback();
+    hero.style.opacity = 1;
+  }, 500);
+}
+
+function rotateBackgroundWithFade() {
+  fadeOutIn(() => {
+    hero.style.backgroundImage = `url('${images[idx]}')`;
+    idx = (idx + 1) % images.length;
+  });
+}
+
+// 초기 상태
+hero.style.opacity = 1;
+rotateBackgroundWithFade();
+setInterval(rotateBackgroundWithFade, 5000); // 5초마다 변경
 </script>
 
   <!-- 서비스 / 주요업무 섹션 -->
