@@ -32,6 +32,11 @@
     </div>
   </section>
 
+  <!-- 롤링 배너 섹션 -->
+  <section id="rolling" class="rolling">
+    <img src="image/rolling.png" alt="롤링 배너" style="width:1200px; height:257px; display:block; margin:0 auto;">
+  </section>
+
 <script>
 const images = [
   'image/001.png',
@@ -85,7 +90,7 @@ document.querySelector('a[href="#process"], a[href="#services"]').addEventListen
   const targetY = target.getBoundingClientRect().top + window.pageYOffset;
   const startY = window.pageYOffset;
   const distance = targetY - startY;
-  const duration = 1200; // ms, 기존보다 더 느리게
+  const duration = 1100; // ms, 기존보다 더 느리게
   let startTime = null;
   function scrollStep(timestamp) {
     if (!startTime) startTime = timestamp;
@@ -102,7 +107,6 @@ document.querySelector('a[href="#process"], a[href="#services"]').addEventListen
   window.requestAnimationFrame(scrollStep);
 });
 </script>
-
   <!-- 서비스 / 주요업무 섹션 -->
   <section id="services" class="services">
   <img src="image/소개.png" alt="서비스 소개 이미지" style="width:1200px; height:2500px; display:block; margin:0 auto;">
