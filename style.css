@@ -174,7 +174,10 @@ ul {
 
 /* 서비스 섹션 */
 .services {
+  height: 2000px;
   margin-top: 0;
+  width: 1200px;
+  margin: 0 auto;
   padding: 20px 20px;
   text-align: center;
 }
