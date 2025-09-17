@@ -155,7 +155,7 @@ ul {
   width: 1200px;
   height: 583px;
   margin: 0 auto;
-  padding: 0;
+  padding: 20px;
   position: relative;
   overflow: hidden;
 }
@@ -177,8 +177,9 @@ ul {
   height: 2000px;
   margin-top: 0;
   width: 1200px;
-  margin: 0 auto;
-  padding: 20px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 70px 0px;
   text-align: center;
 }
 .services h2 {
