@@ -6,7 +6,7 @@
   <title>라이브커머스 PD, 양지은입니다.</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="font-family:'Pretendard',sans-serif;">
   <!-- 상단 네비게이션 바 -->
   <header class="header">
     <div class="container">
@@ -113,22 +113,245 @@ document.querySelector('a[href="#process"], a[href="#services"]').addEventListen
 
   <!-- 포트폴리오 / 실적 섹션 -->
   <section id="portfolio" class="portfolio">
+    <div class="portfolio-category-filter" style="display:flex; gap:16px; justify-content:center; margin-bottom:24px;">
+      <button class="category-btn" data-category="all" style="background:#fff; color:#222; border:1px solid #ccc; border-radius:8px; padding:8px 24px; font-size:1rem; font-weight:600; cursor:pointer;">전체</button>
+      <button class="category-btn" data-category="beuty" style="background:#fff; color:#f05f7c; border:1px solid #f05f7c; border-radius:8px; padding:8px 24px; font-size:1rem; font-weight:600; cursor:pointer;">뷰티</button>
+      <button class="category-btn" data-category="kids" style="background:#fff; color:#18a8f1; border:1px solid #18a8f1; border-radius:8px; padding:8px 24px; font-size:1rem; font-weight:600; cursor:pointer;">육아</button>
+      <button class="category-btn" data-category="home appliances" style="background:#fff; color:#b96bc6; border:1px solid #b96bc6; border-radius:8px; padding:8px 24px; font-size:1rem; font-weight:600; cursor:pointer;">가전</button>
+      <button class="category-btn" data-category="life style" style="background:#fff; color:#afd485; border:1px solid #afd485; border-radius:8px; padding:8px 24px; font-size:1rem; font-weight:600; cursor:pointer;">생활</button>
+      <button class="category-btn" data-category="tour" style="background:#fff; color:#fd9f28; border:1px solid #fd9f28; border-radius:8px; padding:8px 24px; font-size:1rem; font-weight:600; cursor:pointer;">여행</button>
+      <!-- 필요시 카테고리 추가 -->
+    </div>
     <div class="container">
-      <h2>포트폴리오</h2>
-      <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <img src="images/project1.jpg" alt="프로젝트1">
-          <h3>프로젝트 이름 1</h3>
-          <p>간단한 설명</p>
+  <img src="image/제목배너/Live Commerce.png" alt="포트폴리오 타이틀 이미지" style="width:1200px; height:100px; margin-bottom:30px; display:block; margin-left:auto; margin-right:auto; object-fit:cover;">
+      <div class="portfolio-gallery">
+        <div class="portfolio-gallery" style="display:flex; flex-wrap:wrap; gap:32px; justify-content:center; align-items:stretch;">
+          <!-- 1줄 4개씩, 총 4줄(16개) 카드 -->
+          <!-- 1줄 4개씩, 총 4줄(16개) 카드 -->
+          <!-- 1~4 -->
+          <div class="portfolio-thumb card" data-index="0" style="width:220px; min-width:220px; max-width:220px; background:#222; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.10); padding:0; position:relative; cursor:pointer; display:flex; flex-direction:column;">
+            <div style="position:relative;">
+              <img src="image/포트폴리오썸네일/라이브썸네일_투쿨.png" alt="투쿨포스쿨 프로타주 론칭 LIVE" style="width:220px; height:220px; object-fit:cover; border-radius:18px 18px 0 0;">
+              <div style="position:absolute; top:12px; left:12px; background:#f05f7c; color:#fff; font-size:0.8rem; font-weight:700; border-radius:8px; padding:4px 12px;">23/09/18</div>
+            </div>
+            <div style="padding:16px;">
+              <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:8px;">투쿨포스쿨 프로타주 론칭 LIVE</div>
+              <div style="font-size:0.8rem; color:#bbb; font-weight:400; margin-bottom:2px;">네이버쇼핑라이브</div>
+            </div>
+          </div>
+          <div class="portfolio-thumb card" data-index="1" style="width:220px; min-width:220px; max-width:220px; background:#222; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.10); padding:0; position:relative; cursor:pointer; display:flex; flex-direction:column;">
+            <div style="position:relative;">
+              <img src="image/003.png" alt="아일로 액상 콜라겐" style="width:220px; height:220px; object-fit:cover; border-radius:18px 18px 0 0;">
+              <div style="position:absolute; top:12px; left:12px; background:#f05f7c; color:#fff; font-size:0.8rem; font-weight:700; border-radius:8px; padding:4px 12px;">23/09/23</div>
+            </div>
+            <div style="padding:10px;">
+              <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:8px;">톤28</div>
+              <div style="font-size:0.8rem; color:#bbb; font-weight:400; margin-bottom:2px;">카카오쇼핑라이브</div>
+            </div>
+          </div>
+          <div class="portfolio-thumb card" data-index="2" style="width:220px; min-width:220px; max-width:220px; background:#222; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.10); padding:0; position:relative; cursor:pointer; display:flex; flex-direction:column;">
+            <div style="position:relative;">
+              <img src="image/004.png" alt="오쏘몰 이뮨&바이탈 오렌지" style="width:220px; height:220px; object-fit:cover; border-radius:18px 18px 0 0;">
+              <div style="position:absolute; top:12px; left:12px; background:#ff8c3b; color:#fff; font-size:0.8rem; font-weight:700; border-radius:8px; padding:4px 12px;">23/09/24</div>
+            </div>
+            <div style="padding:16px;">
+              <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:8px;">팸퍼스X헤이지니 터치오브네이처</div>
+              <div style="font-size:0.8rem; color:#bbb; font-weight:400; margin-bottom:2px;">네이버쇼핑라이브</div>
+            </div>
+          </div>
+          <div class="portfolio-thumb card" data-index="3" style="width:220px; min-width:220px; max-width:220px; background:#222; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.10); padding:0; position:relative; cursor:pointer; display:flex; flex-direction:column;">
+            <div style="position:relative;">
+              <img src="image/005.png" alt="미니마스 멀티비타민" style="width:220px; height:220px; object-fit:cover; border-radius:18px 18px 0 0;">
+              <div style="position:absolute; top:12px; left:12px; background:#c7c16e; color:#fff; font-size:0.8rem; font-weight:700; border-radius:8px; padding:4px 12px;">23/09/25</div>
+            </div>
+            <div style="padding:16px;">
+              <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:8px;">팸퍼스X릴리옌젤 통잠팬티</div>
+              <div style="font-size:0.8rem; color:#bbb; font-weight:400; margin-bottom:2px;">네이버쇼핑라이브</div>
+            </div>
+          </div>
+          <!-- 5~8 -->
+          <div class="portfolio-thumb card" data-index="4" style="width:220px; min-width:220px; max-width:220px; background:#222; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.10); padding:0; position:relative; cursor:pointer; display:flex; flex-direction:column;">
+            <div style="position:relative;">
+              <img src="image/006.png" alt="오쏘몰 이뮨&바이탈 핑크" style="width:220px; height:220px; object-fit:cover; border-radius:18px 18px 0 0;">
+              <div style="position:absolute; top:12px; left:12px; background:#ff6fa0; color:#fff; font-size:0.8rem; font-weight:700; border-radius:8px; padding:4px 12px;">23/09/30</div>
+            </div>
+            <div style="padding:16px;">
+              <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:8px;">오쏘몰 이뮨&바이탈 추석 전 배송 특가</div>
+              <div style="font-size:0.8rem; color:#bbb; font-weight:400; margin-bottom:2px;">네이버쇼핑라이브</div>
+            </div>
+          </div>
+          <div class="portfolio-thumb card" data-index="5" style="width:220px; min-width:220px; max-width:220px; background:#222; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.10); padding:0; position:relative; cursor:pointer; display:flex; flex-direction:column;">
+            <div style="position:relative;">
+              <img src="image/001.png" alt="오쏘몰 이뮨&바이탈" style="width:220px; height:220px; object-fit:cover; border-radius:18px 18px 0 0;">
+              <div style="position:absolute; top:12px; left:12px; background:#00b8ff; color:#fff; font-size:0.8rem; font-weight:700; border-radius:8px; padding:4px 12px;">23/10/01</div>
+            </div>
+            <div style="padding:16px;">
+              <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:8px;">오쏘몰 이뮨&바이탈 10월 특가</div>
+              <div style="font-size:0.8rem; color:#bbb; font-weight:400; margin-bottom:2px;">네이버쇼핑라이브</div>
+            </div>
+          </div>
+          <div class="portfolio-thumb card" data-index="6" style="width:220px; min-width:220px; max-width:220px; background:#222; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.10); padding:0; position:relative; cursor:pointer; display:flex; flex-direction:column;">
+            <div style="position:relative;">
+              <img src="image/003.png" alt="아일로 액상 콜라겐" style="width:220px; height:220px; object-fit:cover; border-radius:18px 18px 0 0;">
+              <div style="position:absolute; top:12px; left:12px; background:#ff6fa0; color:#fff; font-size:0.8rem; font-weight:700; border-radius:8px; padding:4px 12px;">23/10/02</div>
+            </div>
+            <div style="padding:16px;">
+              <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:8px;">아일로 액상 콜라겐 10월 특가</div>
+              <div style="font-size:0.8rem; color:#bbb; font-weight:400; margin-bottom:2px;">네이버쇼핑라이브</div>
+            </div>
+          </div>
+          <div class="portfolio-thumb card" data-index="7" style="width:220px; min-width:220px; max-width:220px; background:#222; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.10); padding:0; position:relative; cursor:pointer; display:flex; flex-direction:column;">
+            <div style="position:relative;">
+              <img src="image/004.png" alt="오쏘몰 이뮨&바이탈 오렌지" style="width:220px; height:220px; object-fit:cover; border-radius:18px 18px 0 0;">
+              <div style="position:absolute; top:12px; left:12px; background:#ff8c3b; color:#fff; font-size:0.8rem; font-weight:700; border-radius:8px; padding:4px 12px;">23/10/03</div>
+            </div>
+            <div style="padding:16px;">
+              <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:8px;">오쏘몰 이뮨&바이탈 오렌지 10월 특가</div>
+              <div style="font-size:0.8rem; color:#bbb; font-weight:400; margin-bottom:2px;">네이버쇼핑라이브</div>
+            </div>
+          </div>
+          <!-- 9~12 -->
+          <div class="portfolio-thumb card" data-index="8" style="width:220px; min-width:220px; max-width:220px; background:#222; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.10); padding:0; position:relative; cursor:pointer; display:flex; flex-direction:column;">
+            <div style="position:relative;">
+              <img src="image/005.png" alt="미니마스 멀티비타민" style="width:220px; height:220px; object-fit:cover; border-radius:18px 18px 0 0;">
+              <div style="position:absolute; top:12px; left:12px; background:#c7c16e; color:#fff; font-size:0.8rem; font-weight:700; border-radius:8px; padding:4px 12px;">23/10/04</div>
+            </div>
+            <div style="padding:16px;">
+              <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:8px;">미니마스 멀티비타민 10월 특가</div>
+              <div style="font-size:0.8rem; color:#bbb; font-weight:400; margin-bottom:2px;">네이버쇼핑라이브</div>
+            </div>
+          </div>
+          <div class="portfolio-thumb card" data-index="9" style="width:220px; min-width:220px; max-width:220px; background:#222; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.10); padding:0; position:relative; cursor:pointer; display:flex; flex-direction:column;">
+            <div style="position:relative;">
+              <img src="image/006.png" alt="오쏘몰 이뮨&바이탈 핑크" style="width:220px; height:220px; object-fit:cover; border-radius:18px 18px 0 0;">
+              <div style="position:absolute; top:12px; left:12px; background:#ff6fa0; color:#fff; font-size:0.8rem; font-weight:700; border-radius:8px; padding:4px 12px;">23/10/05</div>
+            </div>
+            <div style="padding:16px;">
+              <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:8px;">오쏘몰 이뮨&바이탈 핑크 10월 특가</div>
+              <div style="font-size:0.8rem; color:#bbb; font-weight:400; margin-bottom:2px;">네이버쇼핑라이브</div>
+            </div>
+          </div>
+          <div class="portfolio-thumb card" data-index="10" style="width:220px; min-width:220px; max-width:220px; background:#222; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.10); padding:0; position:relative; cursor:pointer; display:flex; flex-direction:column;">
+            <div style="position:relative;">
+              <img src="image/001.png" alt="오쏘몰 이뮨&바이탈" style="width:220px; height:220px; object-fit:cover; border-radius:18px 18px 0 0;">
+              <div style="position:absolute; top:12px; left:12px; background:#00b8ff; color:#fff; font-size:0.8rem; font-weight:700; border-radius:8px; padding:4px 12px;">23/10/06</div>
+            </div>
+            <div style="padding:16px;">
+              <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:8px;">오쏘몰 이뮨&바이탈 10월 특가2</div>
+              <div style="font-size:0.8rem; color:#bbb; font-weight:400; margin-bottom:2px;">네이버쇼핑라이브</div>
+            </div>
+          </div>
+          <div class="portfolio-thumb card" data-index="11" style="width:220px; min-width:220px; max-width:220px; background:#222; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.10); padding:0; position:relative; cursor:pointer; display:flex; flex-direction:column;">
+            <div style="position:relative;">
+              <img src="image/003.png" alt="아일로 액상 콜라겐" style="width:220px; height:220px; object-fit:cover; border-radius:18px 18px 0 0;">
+              <div style="position:absolute; top:12px; left:12px; background:#ff6fa0; color:#fff; font-size:0.8rem; font-weight:700; border-radius:8px; padding:4px 12px;">23/10/07</div>
+            </div>
+            <div style="padding:16px;">
+              <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:8px;">아일로 액상 콜라겐 10월 특가2</div>
+              <div style="font-size:0.8rem; color:#bbb; font-weight:400; margin-bottom:2px;">네이버쇼핑라이브</div>
+            </div>
+          </div>
+          <!-- 13~16 -->
+          <div class="portfolio-thumb card" data-index="12" style="width:220px; min-width:220px; max-width:220px; background:#222; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.10); padding:0; position:relative; cursor:pointer; display:flex; flex-direction:column;">
+            <div style="position:relative;">
+              <img src="image/004.png" alt="오쏘몰 이뮨&바이탈 오렌지" style="width:220px; height:220px; object-fit:cover; border-radius:18px 18px 0 0;">
+              <div style="position:absolute; top:12px; left:12px; background:#ff8c3b; color:#fff; font-size:0.8rem; font-weight:700; border-radius:8px; padding:4px 12px;">23/10/08</div>
+            </div>
+            <div style="padding:16px;">
+              <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:8px;">오쏘몰 이뮨&바이탈 오렌지 10월 특가2</div>
+              <div style="font-size:0.8rem; color:#bbb; font-weight:400; margin-bottom:2px;">네이버쇼핑라이브</div>
+            </div>
+          </div>
+          <div class="portfolio-thumb card" data-index="13" style="width:220px; min-width:220px; max-width:220px; background:#222; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.10); padding:0; position:relative; cursor:pointer; display:flex; flex-direction:column;">
+            <div style="position:relative;">
+              <img src="image/005.png" alt="미니마스 멀티비타민" style="width:220px; height:220px; object-fit:cover; border-radius:18px 18px 0 0;">
+              <div style="position:absolute; top:12px; left:12px; background:#c7c16e; color:#fff; font-size:0.8rem; font-weight:700; border-radius:8px; padding:4px 12px;">23/10/09</div>
+            </div>
+            <div style="padding:16px;">
+              <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:8px;">미니마스 멀티비타민 10월 특가2</div>
+              <div style="font-size:0.8rem; color:#bbb; font-weight:400; margin-bottom:2px;">네이버쇼핑라이브</div>
+            </div>
+          </div>
+          <div class="portfolio-thumb card" data-index="14" style="width:220px; min-width:220px; max-width:220px; background:#222; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.10); padding:0; position:relative; cursor:pointer; display:flex; flex-direction:column;">
+            <div style="position:relative;">
+              <img src="image/006.png" alt="오쏘몰 이뮨&바이탈 핑크" style="width:220px; height:220px; object-fit:cover; border-radius:18px 18px 0 0;">
+              <div style="position:absolute; top:12px; left:12px; background:#ff6fa0; color:#fff; font-size:0.8rem; font-weight:700; border-radius:8px; padding:4px 12px;">23/10/10</div>
+            </div>
+            <div style="padding:16px;">
+              <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:8px;">오쏘몰 이뮨&바이탈 핑크 10월 특가2</div>
+              <div style="font-size:0.8rem; color:#bbb; font-weight:400; margin-bottom:2px;">네이버쇼핑라이브</div>
+            </div>
+          </div>
+          <div class="portfolio-thumb card" data-index="15" style="width:220px; min-width:220px; max-width:220px; background:#222; border-radius:18px; box-shadow:0 2px 12px rgba(0,0,0,0.10); padding:0; position:relative; cursor:pointer; display:flex; flex-direction:column;">
+            <div style="position:relative;">
+              <img src="image/001.png" alt="오쏘몰 이뮨&바이탈" style="width:220px; height:220px; object-fit:cover; border-radius:18px 18px 0 0;">
+              <div style="position:absolute; top:12px; left:12px; background:#00b8ff; color:#fff; font-size:0.8rem; font-weight:700; border-radius:8px; padding:4px 12px;">23/10/11</div>
+            </div>
+            <div style="padding:16px;">
+              <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:8px;">오쏘몰 이뮨&바이탈 10월 특가3</div>
+              <div style="font-size:0.8rem; color:#bbb; font-weight:400; margin-bottom:2px;">네이버쇼핑라이브</div>
+            </div>
+          </div>
         </div>
-        <div class="portfolio-item">
-          <img src="images/project2.jpg" alt="프로젝트2">
-          <h3>프로젝트 이름 2</h3>
-          <p>간단한 설명</p>
+      </div>
+      <div id="portfolio-detail" class="portfolio-detail" style="display:none; margin-top:40px;">
+        <div style="display:flex; gap:40px; align-items:flex-start;">
+          <div class="portfolio-video" style="flex:0 0 400px; background:#111; border-radius:16px; overflow:hidden; display:flex; align-items:center; justify-content:center; min-height:225px;">
+            <!-- 9:16 or 16:9 영상 예시 (YouTube embed) -->
+            <iframe id="portfolio-video-frame" width="360" height="225" src="" frameborder="0" allowfullscreen style="background:#000;"></iframe>
+          </div>
+          <div style="flex:1;">
+            <div id="portfolio-detail-title" style="font-size:20pt; font-weight:bold; margin-bottom:18px;"></div>
+            <div id="portfolio-detail-desc" style="font-size:12pt; font-weight:300; color:#555;"></div>
+          </div>
         </div>
-        <!-- 이런 항목들을 더 추가 -->
       </div>
     </div>
+    <script>
+    // 포트폴리오 데이터 예시
+    const portfolioData = [
+      {
+        title: '프로젝트 이름 1',
+        desc: '간단한 설명 1',
+        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // 16:9
+      },
+      {
+        title: '프로젝트 이름 2',
+        desc: '간단한 설명 2',
+        video: 'https://www.youtube.com/embed/ScMzIvxBSi4', // 9:16
+      },
+    ];
+    // 썸네일 클릭 시 상세 영역 표시
+    document.querySelectorAll('.portfolio-thumb').forEach(function(thumb) {
+      thumb.addEventListener('click', function() {
+        const idx = parseInt(thumb.getAttribute('data-index'));
+        // 블로그형 상세 페이지로 새 탭 이동
+        window.open(`/portfolio-detail.html?idx=${idx}`, '_blank');
+      });
+    });
+
+    // 카테고리별 필터링 기능
+    document.querySelectorAll('.category-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const category = btn.getAttribute('data-category');
+        document.querySelectorAll('.portfolio-thumb.card').forEach(function(card) {
+          const desc = card.querySelector('div[style*="font-size:0.8rem"]');
+          if (category === 'all') {
+            card.style.display = '';
+          } else if (desc && desc.textContent.includes('네이버쇼핑라이브') && category === 'naver') {
+            card.style.display = '';
+          } else if (desc && desc.textContent.includes('카카오쇼핑라이브') && category === 'kakao') {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        // 버튼 활성화 스타일 처리
+        document.querySelectorAll('.category-btn').forEach(function(b){ b.style.boxShadow = 'none'; });
+        btn.style.boxShadow = '0 2px 8px rgba(0,0,0,0.12)';
+      });
+    });
+    </script>
   </section>
 
   <!-- 뉴스 / 공지사항 섹션 -->
