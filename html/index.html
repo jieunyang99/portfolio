@@ -82,14 +82,12 @@ setInterval(crossfadeToNext, 5000);
 
 <script>
 // 네비게이션 '소개' 클릭 시 서비스 섹션으로 스크롤
-document.querySelector('a[href="#process"], a[href="#services"]').addEventListener('click', function(e) {
-  e.preventDefault();
-  const target = document.getElementById('services');
+function smoothScrollToSection(sectionId, duration = 1100) {
+  const target = document.getElementById(sectionId);
   if (!target) return;
   const targetY = target.getBoundingClientRect().top + window.pageYOffset;
   const startY = window.pageYOffset;
   const distance = targetY - startY;
-  const duration = 1100; // ms, 기존보다 더 느리게
   let startTime = null;
   function scrollStep(timestamp) {
     if (!startTime) startTime = timestamp;
@@ -104,6 +102,18 @@ document.querySelector('a[href="#process"], a[href="#services"]').addEventListen
     return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
   }
   window.requestAnimationFrame(scrollStep);
+}
+
+// '소개' 메뉴 클릭 시 부드러운 스크롤
+document.querySelector('a[href="#process"], a[href="#services"]').addEventListener('click', function(e) {
+  e.preventDefault();
+  smoothScrollToSection('services');
+});
+
+// '포트폴리오' 메뉴 클릭 시 부드러운 스크롤
+document.querySelector('a[href="#portfolio"]').addEventListener('click', function(e) {
+  e.preventDefault();
+  smoothScrollToSection('portfolio');
 });
 </script>
   <!-- 서비스 / 주요업무 섹션 -->
