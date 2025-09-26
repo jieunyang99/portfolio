@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>라이브커머스 PD, 양지은입니다.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="font-family:'Pretendard',sans-serif;">
+  <!-- 상단 네비게이션 바 -->
+  <header class="header">
+    <div class="container">
+<a href="index.html" class="logo">
+  <img src="image/웹사이트로고-001.png" alt="웹사이트로고-001">
+</a>
+      <nav class="nav">
+        <ul>
+          <li><a href="#process">소개</a></li>
+          <li><a href="#portfolio">포트폴리오</a></li>
+          <li><a href="#contact">연락처</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 메인 배너 / 히어로 섹션 -->
+  <section id="hero" class="hero">
+    <div class="hero-img-layer hero-img-1"></div>
+    <div class="hero-img-layer hero-img-2"></div>
+    <div class="container">
+      <!-- 버튼 등이 있으면 추가 가능 -->
+    </div>
+  </section>
+<div style="width: 100%; display: flex; justify-content: center; margin: 30px 0;">
+  <a href="https://naver.me/FQRuqTks" target="_blank" rel="noopener" style="background:#fff; color:#333; font-size:1.1rem; padding:10px 40px; border-radius:30px; text-decoration:none; font-weight:600; border:2px solid #ccc; box-shadow:0 2px 8px rgba(0,0,0,0.08); transition:border 0.2s; margin-right:16px;">최근 방송 보러가기</a>
+  <a href="#contact" class="contact-btn" style="background:#fff; color:#333; font-size:1.1rem; padding:10px 40px; border-radius:30px; text-decoration:none; font-weight:600; border:2px solid #ccc; box-shadow:0 2px 8px rgba(0,0,0,0.08); transition:border 0.2s;">문의하기</a>
+</div>
+
+<script>
+const images = [
+  'image/001.png',
+  'image/003.png',
+  'image/004.png',
+  'image/005.png',
+  'image/006.png'
+];
+let idx = 0;
+let current = 0;
+const layers = [
+  document.querySelector('.hero-img-1'),
+  document.querySelector('.hero-img-2')
+];
+
+// 초기 상태 설정
+layers[0].style.backgroundImage = `url('${images[0]}')`;
+layers[0].style.opacity = 1;
+layers[1].style.opacity = 0;
+
+function crossfadeToNext() {
+  const nextIdx = (idx + 1) % images.length;
+  const fadeOutLayer = layers[current];
+  const fadeInLayer = layers[1 - current];
+  // 다음 이미지를 미리 로드
+  const img = new window.Image();
+  img.src = images[nextIdx];
+  img.onload = function() {
+    fadeInLayer.style.backgroundImage = `url('${images[nextIdx]}')`;
+    fadeInLayer.style.transition = 'opacity 0.8s ease-in-out';
+    fadeOutLayer.style.transition = 'opacity 0.8s ease-in-out';
+    // 크로스페이드
+    fadeInLayer.style.opacity = 1;
+    fadeOutLayer.style.opacity = 0;
+    setTimeout(() => {
+      idx = nextIdx;
+      current = 1 - current;
+    }, 800);
+  };
+}
+
+setInterval(crossfadeToNext, 5000);
+</script>
+
+<script>
+// 네비게이션 '소개' 클릭 시 서비스 섹션으로 스크롤
+function smoothScrollToSection(sectionId, duration = 1100) {
+  const target = document.getElementById(sectionId);
+  if (!target) return;
+  const targetY = target.getBoundingClientRect().top + window.pageYOffset;
+  const startY = window.pageYOffset;
+  const distance = targetY - startY;
+  let startTime = null;
+  function scrollStep(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    window.scrollTo(0, startY + distance * easeInOutQuad(progress));
+    if (progress < 1) {
+      window.requestAnimationFrame(scrollStep);
+    }
+  }
+  function easeInOutQuad(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  }
+  window.requestAnimationFrame(scrollStep);
+}
+
+// '소개' 메뉴 클릭 시 부드러운 스크롤
+document.querySelector('a[href="#process"], a[href="#services"]').addEventListener('click', function(e) {
+  e.preventDefault();
+  smoothScrollToSection('services');
+});
+
+// '포트폴리오' 메뉴 클릭 시 부드러운 스크롤
+document.querySelector('a[href="#portfolio"]').addEventListener('click', function(e) {
+  e.preventDefault();
+  smoothScrollToSection('portfolio');
+});
+</script>
+  <!-- 서비스 / 주요업무 섹션 -->
+  <section id="services" class="services">
+  <img src="image/소개 (1).png" alt="서비스 소개 이미지" style="width:1200px; height:2000px; display:block; margin-left:auto; margin-right:auto; object-fit:cover;">
+  </section>
+  <!-- 포트폴리오 섹션 시작-->
+    </div>
+    <div class="container">
+  <img src="image/제목배너/Live Commerce.png" alt="포트폴리오 타이틀 이미지" style="width:1200px; height:100px; margin-bottom:30px; display:block; margin-left:auto; margin-right:auto; object-fit:cover;">
+      <!-- 포트폴리오 카드 전체 삭제됨 -->
+      <div id="portfolio-detail" class="portfolio-detail" style="display:none; margin-top:40px;">
+        <div style="display:flex; gap:40px; align-items:flex-start;">
+          <div class="portfolio-video" style="flex:0 0 400px; background:#111; border-radius:16px; overflow:hidden; display:flex; align-items:center; justify-content:center; min-height:225px;">
+            <!-- 9:16 or 16:9 영상 예시 (YouTube embed) -->
+            <iframe id="portfolio-video-frame" width="360" height="225" src="" frameborder="0" allowfullscreen style="background:#000;"></iframe>
+          </div>
+          <div style="flex:1;">
+            <div id="portfolio-detail-title" style="font-size:20pt; font-weight:bold; margin-bottom:18px;"></div>
+            <div id="portfolio-detail-desc" style="font-size:12pt; font-weight:300; color:#555;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    // 포트폴리오 데이터 예시
+    const portfolioData = [
+      {
+        title: '프로젝트 이름 1',
+        desc: '간단한 설명 1',
+        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // 16:9
+      },
+      {
+        title: '프로젝트 이름 2',
+        desc: '간단한 설명 2',
+        video: 'https://www.youtube.com/embed/ScMzIvxBSi4', // 9:16
+      },
+    ];
+    // 썸네일 클릭 시 상세 영역 표시
+    document.querySelectorAll('.portfolio-thumb').forEach(function(thumb) {
+      thumb.addEventListener('click', function() {
+        const idx = parseInt(thumb.getAttribute('data-index'));
+        // 블로그형 상세 페이지로 새 탭 이동
+        window.open(`/portfolio-detail.html?idx=${idx}`, '_blank');
+      });
+    });
+
+    </script>
+  </section>
+
+  <!-- 뉴스 / 공지사항 섹션 -->
+  <section id="news" class="news">
+    <div class="container">
+      <h2>뉴스 & 공지</h2>
+      <ul class="news-list">
+        <li><a href="#">공지 제목 1</a> <span class="date">2025-09-14</span></li>
+        <li><a href="#">공지 제목 2</a> <span class="date">2025-09-10</span></li>
+        <!-- 더 추가 -->
+      </ul>
+    </div>
+  </section>
+
+  <!-- 연락처 섹션 -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>연락처</h2>
+      <p>이메일: oct9912@naver.com</p>
+      <p>카카오톡 ID: j234</p>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 OOO. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
